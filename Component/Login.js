@@ -7,6 +7,10 @@ class Login extends React.Component {
         this.props.navigation.navigate("Register")
     }
 
+    _displayAccueil() {
+        this.props.navigation.navigate("Accueil")
+    }
+
     render() {  
         // console.log(this.props)      
         return (            
@@ -22,7 +26,7 @@ class Login extends React.Component {
                     <TextInput style={styles.textinput} placeholder='Email' />
                     <TextInput style={styles.textinput} placeholder='Mot de Passe' />
                     <View style={styles.button}>
-                        <Button style={styles.button} title='Connecter' onPress={() => {}}/>
+                        <Button style={styles.button} title='Connecter' onPress={() => {this._displayAccueil()}}/>
                     </View>
                     
                     <View>

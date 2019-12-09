@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Login from './Component/Login'
-import Register from './Component/Register'
+import { StyleSheet } from 'react-native';
 import Navigation from './navigation/Navigation'
 
 export default function App() {
@@ -13,7 +11,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
