@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet , Button, TextInput, SafeAreaView, Image, View, Text  } from 'react-native';
+import { Header, Left, Right, Icon } from 'native-base';
 
 class Login extends React.Component {
 
@@ -15,6 +16,13 @@ class Login extends React.Component {
         // console.log(this.props)      
         return (            
             <SafeAreaView  style={styles.main_container}>
+                <Header style={styles.header}>
+                    <Left style={{paddingRight: 250, paddingTop: 20}}>
+                        
+                        <Icon name="menu" onPress= {() => this.props.navigation.openDrawer()}/>
+                        
+                    </Left>
+                </Header>   
                 <SafeAreaView style={styles.container_image}>
                     <Image
                     style={styles.image}
@@ -26,7 +34,7 @@ class Login extends React.Component {
                     <TextInput style={styles.textinput} placeholder='Email' />
                     <TextInput style={styles.textinput} placeholder='Mot de Passe' />
                     <View style={styles.button}>
-                        <Button style={styles.button} title='Connecter' onPress={() => {this._displayAccueil()}}/>
+                        <Button color="#3b964f" title='Connecter' onPress={() => {this._displayAccueil()}}/>
                     </View>
                     
                     <View>
@@ -61,6 +69,7 @@ const styles = StyleSheet.create({
     button:{
         marginLeft: 75,
         marginRight: 75,
+        backgroundColor: '#a5d022'
     },
     container_image:{
         flex:1,
@@ -76,14 +85,24 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 16,
         marginBottom: 5,
-        textAlign: 'center'
+        textAlign: 'center',
     },
     linkSignup:{
-        color:'blue',
+        color:'#a5d022',
         fontWeight: 'bold',
         textAlign: 'center',
         marginTop: 5,
         marginBottom: 5,
+    },
+    container:{
+        flex: 1,
+        backgroundColor: '#fff'
+    },
+    header: {
+      backgroundColor: '#a5d022'
+    }, 
+    button2: {
+        
     }
   })
 
