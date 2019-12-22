@@ -17,11 +17,11 @@ class Login extends React.Component {
         return (            
             <SafeAreaView  style={styles.main_container}>
                 <Header style={styles.header}>
-                    <Left style={{paddingRight: 250, paddingTop: 20}}>
+                    {/* <Left style={{paddingRight: 250, paddingTop: 20}}>
                         
                         <Icon name="menu" onPress= {() => this.props.navigation.openDrawer()}/>
                         
-                    </Left>
+                    </Left> */}
                 </Header>   
                 <SafeAreaView style={styles.container_image}>
                     <Image

@@ -1,13 +1,15 @@
 // Components/TicketItem.js
 
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 
 class TicketItem extends React.Component {
   render() {
-    const ticket = this.props.ticket
+    // const ticket = this.props.ticket
+    const { ticket, displayDetailForTicket } = this.props;
     return (
-        <View style={styles.main_container}>
+        <TouchableOpacity style={styles.main_container}
+          onPress={() => displayDetailForTicket(ticket.id)}>
             <Image
                     style={styles.image}
                     source={require("../Images/enseignes/leclerc.jpg")}
@@ -22,7 +24,7 @@ class TicketItem extends React.Component {
               <Text style={styles.date_debut}>Achat effectué le {ticket.release_date}</Text>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
       )
   }
 }

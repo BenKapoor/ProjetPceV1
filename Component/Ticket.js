@@ -4,8 +4,15 @@ import { createAppContainer } from 'react-navigation';
 import { Header, Left, Right, Icon } from 'native-base';
 import ticket from '../Helper/data'
 import TicketItem from './TicketItem'
+import { getTicketFromApi } from '../Api/api'
 
 class Ticket extends React.Component {
+
+  _displayDetailForTicket= (idTicket) => {
+    console.log("Display ticket with id " + idTicket);
+    this.props.navigation.navigate("TicketDetail", { idTicket: idTicket })
+  }
+
   render() {
     return (
         <SafeAreaView style={styles.container}>
@@ -19,7 +26,7 @@ class Ticket extends React.Component {
             <FlatList
               data={ticket}
               keyExtractor={(item) => item.id.toString()}
-              renderItem={({item}) => <TicketItem ticket={item}/>}
+              renderItem={({item}) => <TicketItem ticket={item} displayDetailForTicket={this._displayDetailForTicket}/>}
             />
       </View>
       </SafeAreaView>
