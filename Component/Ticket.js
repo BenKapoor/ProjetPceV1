@@ -8,6 +8,33 @@ import { getTicketFromApi } from '../Api/api'
 
 class Ticket extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      tickets: [],
+      magasin: null,
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://bridge.buddyweb.fr/api/evolve/factures')
+      .then(response => {
+        console.log(response);
+        return response.json();
+      })
+      .then((result) => { 
+        console.log(result);
+        this.setState({ tickets: result });
+        console.log(this.tickets) 
+      }).catch((error) => console.error(error));
+    
+  //   getTicketFromApi().then(data => {
+  //     this.setState({ tickets: data })
+  //     console.log('tickets:', this.state.tickets)
+  // })
+  
+}
+
   _displayDetailForTicket= (idTicket) => {
     console.log("Display ticket with id " + idTicket);
     this.props.navigation.navigate("TicketDetail", { idTicket: idTicket })
@@ -24,9 +51,14 @@ class Ticket extends React.Component {
           <View style={styles.main_container}>           
             {/* Ici j'ai simplement repris l'exemple sur la documentation de la FlatList */}
             <FlatList
-              data={ticket}
+              data={this.state.tickets}
               keyExtractor={(item) => item.id.toString()}
-              renderItem={({item}) => <TicketItem ticket={item} displayDetailForTicket={this._displayDetailForTicket}/>}
+              renderItem={({item}) => (
+                <TicketItem 
+                  ticket={item} 
+                  displayDetailForTicket={this._displayDetailForTicket}
+                  />
+              )}
             />
       </View>
       </SafeAreaView>

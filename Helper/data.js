@@ -1,6 +1,6 @@
     // Helpers/filmsData.js
 
-export default data = [
+export default dataT = [
     {
        id:181808,
        prixHt:18.33,

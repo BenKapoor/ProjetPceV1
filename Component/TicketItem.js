@@ -7,6 +7,7 @@ class TicketItem extends React.Component {
   render() {
     // const ticket = this.props.ticket
     const { ticket, displayDetailForTicket } = this.props;
+    console.log('ticketItem:',ticket)
     return (
         <TouchableOpacity style={styles.main_container}
           onPress={() => displayDetailForTicket(ticket.id)}>
@@ -17,8 +18,8 @@ class TicketItem extends React.Component {
           <View style={styles.content_container}>
             <View style={styles.description_container}>
                 <Text style={styles.street}> {ticket.street}, {ticket.town}</Text>
-                <Text style={styles.prix_ht}> Prix HT: {ticket.prixHt} €</Text>
-                <Text style={styles.prix_ttc}> Prix TTC: {ticket.prixTtc} €</Text>
+                <Text style={styles.prix_ht}> Magasin: {ticket.magasin_name} €</Text>
+                <Text style={styles.prix_ttc}> Prix TTC: {ticket.prixttc} €</Text>
             </View>
             <View style={styles.date_container}>
               <Text style={styles.date_debut}>Achat effectué le {ticket.release_date}</Text>
