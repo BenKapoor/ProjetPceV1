@@ -61,6 +61,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingLeft: 5,
         margin: 4,
+        borderBottomWidth: 1,
+        color: "#000",
         
     },
     view_container: {

@@ -22,7 +22,7 @@ class Accueil extends React.Component {
           <Text style={styles.message}>Votre code à scanner</Text>
                     <Image
                     style={styles.image}
-                    source={require('../Images/barcode.gif')}
+                    source={require('../Images/codeBarre.png')}
                     />
                 </SafeAreaView>
       </SafeAreaView>

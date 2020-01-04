@@ -12,6 +12,8 @@ import Ticket from './Component/Ticket'
 import Compte from './Component/Compte'
 import ScannerScreen from './Component/ScannerScreen'
 import TicketDetail from './Component/TicketDetail'
+import Untitled from './Screens/Untitled'
+import Test from './Component/Test'
 
 const WITDH = Dimensions.get('window').width;
 
@@ -128,6 +130,8 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
   },
   Scanner: ScannerScreen,
+  Test: Test,
+  Untitled: Untitled
 }, 
 {
   contentComponent: CustomDrawerComponant,

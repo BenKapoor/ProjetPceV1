@@ -17,12 +17,10 @@ class TicketItem extends React.Component {
                 />
           <View style={styles.content_container}>
             <View style={styles.description_container}>
-                <Text style={styles.street}> {ticket.street}, {ticket.town}</Text>
-                <Text style={styles.prix_ht}> Magasin: {ticket.magasin_name} €</Text>
+                {/* <Text style={styles.street}> {ticket.street}, {ticket.town}</Text>
+                <Text style={styles.prix_ht}> Magasin: {ticket.magasin_name} €</Text> */}
                 <Text style={styles.prix_ttc}> Prix TTC: {ticket.prixttc} €</Text>
-            </View>
-            <View style={styles.date_container}>
-              <Text style={styles.date_debut}>Achat effectué le {ticket.release_date}</Text>
+                <Text style={styles.date_debut}>Achat effectué le {ticket.release_date}</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -33,6 +31,19 @@ class TicketItem extends React.Component {
 const styles = StyleSheet.create({
   main_container: {
     height: 220,
+    flex: 1,
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor: '#ddd',
+    borderBottomWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 5,
   },
   image: {
     width: 220,
@@ -42,7 +53,7 @@ const styles = StyleSheet.create({
   },
   content_container: {
     flex: 1,
-    margin: 5
+    margin: 5,
   },
   header_container: {
     flex: 4,
